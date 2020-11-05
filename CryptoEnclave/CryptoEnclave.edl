@@ -11,7 +11,7 @@ enclave {
         * @param lenOut
         *    the length of the decMessageOut.
         */
-        public void decryptMessage([in,size=len] char *encMessageIn, size_t len, [out,size=lenOut] char *decMessageOut, size_t lenOut);
+        public void decryptMessage([user_check] char *encMessageIn, size_t len, [user_check] char *decMessageOut, size_t lenOut);
 
         /*
         * This function encrypts a message.
@@ -24,9 +24,9 @@ enclave {
         * @param lenOut
         *    the length of the encMessageOut.
         */
-        public void encryptMessage([in,size=len] char *decMessageIn, size_t len, [out,size=lenOut] char *encMessageOut, size_t lenOut);
+        public void encryptMessage([user_check] char *decMessageIn, size_t len, [user_check] char *encMessageOut, size_t lenOut);
 
-        public void hashMessage([in,size=len] char *hashMessageIn, size_t len);
+        public void hashMessage([user_check] char *hashMessageIn, size_t len);
     };
 
     untrusted {

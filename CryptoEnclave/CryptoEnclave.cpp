@@ -52,7 +52,6 @@ void hashMessage(char *hashMessageIn, size_t len) {
 	uint8_t p_dst[BUFLEN] = {0};
 	sgx_sha256_msg(
 		origMessage, len,
-		(sgx_sha256_hash_t*)(p_dst),
-	)
+		(sgx_sha256_hash_t*)(p_dst));
 	// memcpy(encMessageOut,p_dst,lenOut);
 }

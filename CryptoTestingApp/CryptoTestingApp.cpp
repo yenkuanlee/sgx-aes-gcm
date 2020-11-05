@@ -62,7 +62,7 @@ int main()
 	decMessage[decMessageLen] = '\0';
 	// printf("Decrypted message: %s", decMessage);
 
-	ret = hashMessage(encMessage,encMessageLen);
+	ret = hashMessage(eid,encMessage,encMessageLen);
 
 	return 0;
 }
