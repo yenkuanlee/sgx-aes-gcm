@@ -50,8 +50,10 @@ void encryptMessage(char *decMessageIn, size_t len, char *encMessageOut, size_t 
 void hashMessage(char *hashMessageIn, size_t len) {
 	uint8_t *origMessage = (uint8_t *) hashMessageIn;
 	uint8_t p_dst[BUFLEN] = {0};
+	for(int ii = 0;ii<1000000;ii++){
 	sgx_sha256_msg(
 		origMessage, len,
 		(sgx_sha256_hash_t*)(p_dst));
+	}
 	// memcpy(encMessageOut,p_dst,lenOut);
 }
