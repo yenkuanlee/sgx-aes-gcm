@@ -48,21 +48,21 @@ int main()
 	size_t encMessageLen = (SGX_AESGCM_MAC_SIZE + SGX_AESGCM_IV_SIZE + strlen(message));
 	char *encMessage = (char *) malloc((encMessageLen+1)*sizeof(char));
 
-	// printf("Encrypting...\n");
-	// ret = encryptMessage(eid, message, strlen(message), encMessage, encMessageLen);
-	// encMessage[encMessageLen] = '\0';
-	// // printf("Encrypted message: %s\n", encMessage);
+	printf("Encrypting...\n");
+	ret = encryptMessage(eid, message, strlen(message), encMessage, encMessageLen);
+	encMessage[encMessageLen] = '\0';
+	// printf("Encrypted message: %s\n", encMessage);
 
-	// // The decrypted message will contain the same message as the original one.
-	// size_t decMessageLen = strlen(message);
-	// char *decMessage = (char *) malloc((decMessageLen+1)*sizeof(char));
+	// The decrypted message will contain the same message as the original one.
+	size_t decMessageLen = strlen(message);
+	char *decMessage = (char *) malloc((decMessageLen+1)*sizeof(char));
 
-	// // printf("Decrypting...\n");
-	// ret = decryptMessage(eid,encMessage,encMessageLen,decMessage,decMessageLen);
-	// decMessage[decMessageLen] = '\0';
-	// printf("Decrypted message: %s", decMessage);
+	// printf("Decrypting...\n");
+	ret = decryptMessage(eid,encMessage,encMessageLen,decMessage,decMessageLen);
+	decMessage[decMessageLen] = '\0';
+	printf("Decrypted message: %s", decMessage);
 
-	ret = hashMessage(eid,encMessage,encMessageLen);
+	// ret = hashMessage(eid,encMessage,encMessageLen);
 
 	return 0;
 }
