@@ -1,0 +1,17 @@
+nohup: ignoring input
+start to run sha256/4k...
+using 8.3607199192 seconds
+performance: 478.427699846 MB
+
+start to run sha256/1m...
+using 1715.20124006 seconds
+performance: 583.021966544 MB
+
+start to run aes/4k...
+using 4.58443212509 seconds
+performance: 872.518098394 MB
+
+start to run aes/1m...
+using 699.074038982 seconds
+performance: 1430.46364796 MB
+
